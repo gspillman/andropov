@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Project:</b>
+  <%= @report.project %>
+</p>
+
+<p>
+  <b>Scenario:</b>
+  <%= @report.scenario %>
+</p>
+
+<p>
+  <b>Browser:</b>
+  <%= @report.browser %>
+</p>
+
+<p>
+  <b>Environment:</b>
+  <%= @report.environment %>
+</p>
+
+<p>
+  <b>Result:</b>
+  <%= @report.result %>
+</p>
+
+
+<%= link_to 'Edit', edit_report_path(@report) %> |
+<%= link_to 'Back', reports_path %>
