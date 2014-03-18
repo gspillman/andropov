@@ -1,6 +1,6 @@
 Andropov::Application.routes.draw do
   resources :reports
-
+  resources :dashboard
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

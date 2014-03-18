@@ -1,0 +1,43 @@
+<H1>Andropov: We report on your app's activities</H1>
+
+<div id="lastfive">
+  <h2>Last Five Scenarios Run</h2>
+  <table>
+    <tr>
+      <th>Project</th> <th>Scenario</th> <th>Browser</th> <th>Environment</th> <th>Passing</th>
+    </tr>
+    <% @lastreports.each do |report| %>
+    <tr>
+      <td><%= report.project %> </td>
+      <td><%= report.scenario %></td>
+      <td><%= report.browser %></td>
+      <td><%= report.environment %></td>
+      <td><%= report.result %></td>
+    </tr>
+  <% end %>
+ </table>
+</div>
+
+<hr>
+
+<div id="lasttenall">
+
+  <% CONFIG.each do |key,value| %>
+
+    <% lastten = Report.where(:project => value) %>
+
+    <table>
+      <th><%= value %></th>
+      <% lastten.each do |item| %>
+      <tr>
+        <td><%= item.scenario %></td>
+        <td><%= item.browser %></td>
+        <td><%= item.environment %></td>
+        <td><%= item.result %></td>
+      </tr>
+      <% end %>
+    </table>
+
+  <% end %>
+
+</div>
