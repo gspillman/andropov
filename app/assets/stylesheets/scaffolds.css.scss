@@ -1,9 +1,74 @@
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: #610B21;
+  background-image: url(/assets/drago.jpg);
+  background-repeat:no-repeat;
+  background-position: right bottom;
+  color: #ffffff;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px;
+
+}
+
+#banner {
+  background-color: #FFBF00;
+  font-family: helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 50px;
+  padding: 5px;
+  color: #000;
+  text-align: center;
+}
+
+#reportsection {
+
+  align-content: center;
+  text-align: center;
+  clear: right;
+
+}
+
+#banner_title {
+  color: #610B21;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#failrow {
+  background-color: #B40404;
+}
+
+#passrow {
+  background-color: #31B404;
+}
+
+#footer {
+  height: 300px;
+  color: #FFBF00;
+  text-align: center;
+}
+
+#percentage {
+  font-size: 30px;
+  font-weight: bold;
+  color: #FFBF00;
+}
+
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.left {
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+td.percentage {
+  padding: 10px;
+}
+
+h2 {
+  color: #FFBF00;
 }
 
 p, ol, ul, td {

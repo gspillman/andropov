@@ -1,13 +1,22 @@
-<H1>Andropov: We report on your app's activities</H1>
+<div id="banner">
+<span id="banner_title">::Drago Reports::</span>
+<br>
+<b>Your application is broken</b>
+</div>
 
-<div id="lastfive">
+<div id="reportsection">
   <h2>Last Five Scenarios Run</h2>
-  <table>
+  <table class="center">
     <tr>
       <th>Project</th> <th>Scenario</th> <th>Browser</th> <th>Environment</th> <th>Passing</th>
     </tr>
     <% @lastreports.each do |report| %>
-    <tr>
+
+    <% if report.result == false %>
+      <tr id="failrow">
+    <% else %>
+      <tr id="passrow">
+    <% end %>
       <td><%= report.project %> </td>
       <td><%= report.scenario %></td>
       <td><%= report.browser %></td>
@@ -20,16 +29,24 @@
 
 <hr>
 
-<div id="lasttenall">
+<div id="reportsection">
 
+  <h2>Latest Project Test Results</h2>
+
+  <table class="center">
+  <tr>
   <% CONFIG.each do |key,value| %>
 
-    <% lastten = Report.where(:project => value) %>
-
-    <table>
+    <% lastten = Report.where(:project => value).limit(10) %>
+  <td>
+    <table class="left">
       <th><%= value %></th>
       <% lastten.each do |item| %>
-      <tr>
+          <% if item.result == false %>
+              <tr id="failrow">
+          <% else %>
+              <tr id="passrow">
+          <% end %>
         <td><%= item.scenario %></td>
         <td><%= item.browser %></td>
         <td><%= item.environment %></td>
@@ -37,7 +54,50 @@
       </tr>
       <% end %>
     </table>
-
+  </td>
   <% end %>
+
+  </tr>
+  </table>
+
+</div>
+
+<hr>
+
+<div id="reportsection">
+
+  <h2>Project Pass Ratio</h2>
+
+  <table class="center">
+    <tr>
+
+  <% CONFIG.each do |key,value| %>
+
+      <% lasthundredtrue = Report.where(:project => value, :result => true).limit(100).count %>
+      <% totalcount = Report.where(:project => value).limit(100).count %>
+      <% if totalcount == 0 %>
+              <% totalcount += 1 %>
+      <% end %>
+
+            <td class="percentage">
+              <%= value %>
+              <br><br>
+              <span id="percentage">
+                <%= 100.00*(lasthundredtrue/totalcount) %> %
+              </span>
+              <br>
+              passing
+            </td>
+        <% end %>
+      </tr>
+      </table>
+
+</div>
+
+<br>
+
+<div id="footer">
+
+  Useful links can go here
 
 </div>
