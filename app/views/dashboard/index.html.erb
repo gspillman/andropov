@@ -1,12 +1,10 @@
 <div id="banner">
-<span id="banner_title">::Drago Reports::</span>
-<br>
-<b>Your application is broken</b>
+<span id="banner_title">kgb Automation Report Dashboard</span>
 </div>
 
 <div id="reportsection">
   <h2>Last Five Scenarios Run</h2>
-  <table class="center">
+  <table class="left">
     <tr>
       <th>Project</th> <th>Scenario</th> <th>Browser</th> <th>Environment</th> <th>Passing</th>
     </tr>
@@ -29,11 +27,11 @@
 
 <hr>
 
-<div id="reportsection">
+<div>
 
   <h2>Latest Project Test Results</h2>
 
-  <table class="center">
+  <table>
   <tr>
   <% CONFIG.each do |key,value| %>
 
@@ -64,11 +62,11 @@
 
 <hr>
 
-<div id="reportsection">
+<div>
 
   <h2>Project Pass Ratio</h2>
 
-  <table class="center">
+  <table>
     <tr>
 
   <% CONFIG.each do |key,value| %>
@@ -79,14 +77,16 @@
               <% totalcount += 1 %>
       <% end %>
 
-            <td class="percentage">
+            <td>
+             <center>
               <%= value %>
               <br><br>
               <span id="percentage">
                 <%= 100.00*(lasthundredtrue/totalcount) %> %
               </span>
-              <br>
+              <br><br>
               passing
+              </center>
             </td>
         <% end %>
       </tr>
@@ -98,6 +98,6 @@
 
 <div id="footer">
 
-  Useful links can go here
+  <%= link_to("View Project Tests on Team City", "http://10.185.198.60:8081/overview.html") %>
 
 </div>

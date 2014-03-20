@@ -1,56 +1,41 @@
 body {
-  background-color: #610B21;
-  background-image: url(/assets/drago.jpg);
-  background-repeat:no-repeat;
-  background-position: right bottom;
-  color: #ffffff;
+  background-color: #F5F5F5;
+  color: #93B16C;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-
 }
 
 #banner {
-  background-color: #FFBF00;
-  font-family: helvetica, sans-serif;
-  font-size: 15px;
+  background-color: #C7D0D5;
+  font-family: georgia, serif;
+  font-size: 18px;
   line-height: 50px;
   padding: 5px;
-  color: #000;
-  text-align: center;
-}
-
-#reportsection {
-
-  align-content: center;
-  text-align: center;
-  clear: right;
 
 }
 
 #banner_title {
-  color: #610B21;
+  color: #FF7148;
   font-size: 25px;
   font-weight: bold;
+
 }
 
 #failrow {
-  background-color: #B40404;
-}
-
-#passrow {
-  background-color: #31B404;
+  background-color: #EC583A;
+  color: #000;
+  border-color: #EC583A;
 }
 
 #footer {
   height: 300px;
-  color: #FFBF00;
-  text-align: center;
-}
+  color: #EC583A;
+ }
 
 #percentage {
   font-size: 30px;
   font-weight: bold;
-  color: #FFBF00;
+  color: #FF7148;
 }
 
 table.center {
@@ -61,6 +46,7 @@ table.center {
 table.left {
   margin-left: 0px;
   margin-right: auto;
+  background-color: #C7D0D5
 }
 
 td.percentage {
@@ -68,7 +54,7 @@ td.percentage {
 }
 
 h2 {
-  color: #FFBF00;
+  color: #EC583A;
 }
 
 p, ol, ul, td {
@@ -84,13 +70,12 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #EC583A;
   &:visited {
-    color: #666;
+    color: #EC583A;
   }
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #000;
   }
 }
 
